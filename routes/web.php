@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategorieController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,3 +20,5 @@ Route::get('/', function () {
 });
 
 Route::get('/categories' , [CategorieController::class , 'index']);
+Route::get('/categories/create' , [CategorieController::class , 'create']);
+Route::post('/categories/store' , [CategorieController::class , 'store'])->name('categories.store');

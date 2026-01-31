@@ -25,12 +25,6 @@
         <a href="{{ url('/categories/create') }}" class="btn-add">add category</a>
     </div>
 
-    @if(session('success'))
-        <div style="color: green; padding: 10px; border: 1px solid green; margin-bottom: 10px;">
-            {{ session('success') }}
-        </div>
-    @endif
-
     <table>
         <thead>
             <tr>
@@ -48,7 +42,7 @@
                 <td><strong>{{ $category->nom }}</strong></td>
                 <td><span class="badge">{{ $category->slug }}</span></td>
                 <td>{{ $category->description ?? 'ne pas de description' }}</td>
-              
+                
             </tr>
             @endforeach
         </tbody>
