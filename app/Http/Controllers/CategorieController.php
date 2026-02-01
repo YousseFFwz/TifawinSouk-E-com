@@ -31,4 +31,10 @@ class CategorieController extends Controller
 
             return view('categories.index');
     }
+
+
+    public function edit($id){
+        $Categories = Categories::findOrFail($id);
+        return view('categories.edit', compact('Categories'));
+    }
 }

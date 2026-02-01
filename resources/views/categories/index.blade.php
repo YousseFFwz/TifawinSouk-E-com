@@ -37,12 +37,23 @@
         </thead>
         <tbody>
             @foreach($categories as $category)
+
             <tr>
                 <td>{{ $category->id }}</td>
                 <td><strong>{{ $category->nom }}</strong></td>
                 <td><span class="badge">{{ $category->slug }}</span></td>
                 <td>{{ $category->description ?? 'ne pas de description' }}</td>
-                
+                <td>
+                <a href="{{ route('categories.edit', $category->id) }}" style="color: blue;">edite</a> 
+                {{-- | 
+
+                <form action="{{ route('categories.delete', $category->id) }}" method="POST" style="display:inline;">
+                    @csrf
+                    <button type="submit" onclick="return confirm('delete ?')" style="color: red; border:none; background:none; cursor:pointer;">
+                        delete
+                    </button>
+                </form> --}}
+            </td>
             </tr>
             @endforeach
         </tbody>
