@@ -37,4 +37,20 @@ class CategorieController extends Controller
         $Categories = Categories::findOrFail($id);
         return view('categories.edit', compact('Categories'));
     }
+
+
+    public function update(request $request , $id){
+
+        $Categories = Categories::findOrFail($id);
+
+        $validated = $request->validate([
+            'nom' => 'required',
+            'slug' => 'required|unique:categories,slug,'.$id, 
+            'description' => 'nullable'
+        ]);
+
+        
+        $Categories->update($validated);
+        return redirect('/categories');
+    }
 }

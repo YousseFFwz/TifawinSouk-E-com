@@ -80,7 +80,7 @@
 </style>
 <h2>edite category {{ $Categories->nom }}</h2>
 
-<form  method="POST">
+<form action="{{ route('categories.update', $Categories->id) }}" method="POST">
     @csrf
     <div>
         <label>nom categry</label>
