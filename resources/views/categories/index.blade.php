@@ -45,14 +45,14 @@
                 <td>{{ $category->description ?? 'ne pas de description' }}</td>
                 <td>
                 <a href="{{ route('categories.edit', $category->id) }}" style="color: blue;">edite</a> 
-                {{-- | 
+                | 
 
                 <form action="{{ route('categories.delete', $category->id) }}" method="POST" style="display:inline;">
                     @csrf
                     <button type="submit" onclick="return confirm('delete ?')" style="color: red; border:none; background:none; cursor:pointer;">
                         delete
                     </button>
-                </form> --}}
+                </form>
             </td>
             </tr>
             @endforeach

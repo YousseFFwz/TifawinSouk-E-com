@@ -53,4 +53,12 @@ class CategorieController extends Controller
         $Categories->update($validated);
         return redirect('/categories');
     }
+
+
+    public function destroy($id){
+         $Categories = Categories::findOrFail($id);
+
+         $Categories->delete();
+         return redirect('/categories');
+    }
 }
